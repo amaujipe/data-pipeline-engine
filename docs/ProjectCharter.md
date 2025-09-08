@@ -341,7 +341,7 @@ Create a robust, scalable, and extensible data pipeline orchestration engine tha
 
 ### Appendix A: Glossary of Terms
 
-// TODO: (Link to separate Glossary document - next deliverable)
+[See complete Glossary of Terms](Glossary.md)
 
 ### Appendix B: Technical Architecture Overview
 

@@ -78,7 +78,7 @@ Our documentation is organized in the `/docs` folder, and follows enterprise sta
 | Document | Status | Description |
 |----------|--------|-------------|
 | [📋 Project Charter](docs/ProjectCharter.md) | ✅ Complete | Project vision, scope, objectives, and stakeholder analysis |
-| [📝 Glossary of Terms](docs/Glossary.md) | 🔄 In Progress | Ubiquitous language and domain terminology |
+| [📝 Glossary of Terms](docs/Glossary.md) | ✅ In Progress | Ubiquitous language and domain terminology |
 | 👥 Use Cases Specification | 🔄 In Progress | Detailed functional requirements and user interactions |
 | 🏗️ Architecture Document | 📅 Planned | System architecture, patterns, and technical decisions |
 | 🗄️ Database Design | 📅 Planned | Entity-relationship diagrams and database schema |

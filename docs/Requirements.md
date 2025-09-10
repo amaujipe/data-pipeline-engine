@@ -844,12 +844,14 @@ GET    /api/executions             # List executions
 **Definition**: The system's ability to perform its functions under stated conditions for a specified period.
 
 **Requirements**:
+
 - System uptime of 99.9% (excluding planned maintenance)
 - Graceful handling of processor failures without system crash
 - Automatic recovery from transient database connection issues
 - Data integrity maintained through ACID transactions
 
 **Measurement**:
+
 - Uptime monitoring over 30-day periods
 - Mean Time Between Failures (MTBF) tracking
 - Data consistency validation checks
@@ -859,15 +861,17 @@ GET    /api/executions             # List executions
 **Definition**: The system's ability to process requests and data within specified time constraints.
 
 **Requirements**:
+
 - Process minimum 1,000 records/second
 - API response time <200ms (95th percentile)
-- Support 100+ concurrent pipeline executions
+- Support for 100+ concurrent pipeline executions will be considered in future versions (v2.0+).
 - Handle data batches up to 1GB
 
 **Measurement**:
+
 - Throughput testing with various data volumes
 - Response time percentile analysis
-- Concurrent execution stress testing
+- Concurrent execution stress testing will be considered in future versions (v2.0+).
 - Memory usage profiling
 
 ### 6.3 Security
@@ -875,12 +879,14 @@ GET    /api/executions             # List executions
 **Definition**: The system's ability to protect data and functionality from unauthorized access and attacks.
 
 **Requirements**:
+
 - Authentication required for all API operations
 - Input validation prevents injection attacks
 - Audit logging of security-relevant events
 - Secure handling of sensitive data in logs
 
 **Measurement**:
+
 - Security vulnerability scanning
 - Authentication success/failure tracking
 - Input validation effectiveness testing
@@ -891,12 +897,14 @@ GET    /api/executions             # List executions
 **Definition**: The ease with which the system can be modified to correct faults, improve performance, or adapt to changing requirements.
 
 **Requirements**:
+
 - Clean architecture with clear separation of concerns
 - Test coverage exceeding 90%
 - Comprehensive documentation maintained
 - Code quality standards enforced
 
 **Measurement**:
+
 - Code complexity metrics
 - Test coverage percentage
 - Documentation coverage assessment
@@ -907,12 +915,14 @@ GET    /api/executions             # List executions
 **Definition**: The system's ability to handle increased workload by adding resources.
 
 **Requirements**:
+
 - Horizontal scaling preparation (future versions)
 - Database query optimization for large datasets
 - Efficient memory usage during processing
 - Stateless application design
 
 **Measurement**:
+
 - Performance testing with increasing load
 - Resource utilization analysis
 - Database query performance profiling
@@ -923,12 +933,14 @@ GET    /api/executions             # List executions
 **Definition**: The ease of use and learnability of the system interfaces.
 
 **Requirements**:
+
 - Intuitive REST API design
 - Clear and actionable error messages
 - Comprehensive documentation with examples
 - Consistent response formats
 
 **Measurement**:
+
 - API usability testing with developers
 - Error message clarity assessment
 - Documentation completeness review
@@ -941,16 +953,19 @@ GET    /api/executions             # List executions
 ### 7.1 Technology Constraints
 
 **DC-001**: Java Technology Stack
-- **Constraint**: System must be implemented using Java 17+ and Spring Boot framework
-- **Rationale**: Learning objectives and ecosystem compatibility
+
+- **Constraint**: System must be implemented using Java 21+ and Spring Boot framework
+- **Rationale**: Based on the development team's experience and expertise
 - **Impact**: Excludes other programming languages and frameworks
 
 **DC-002**: PostgreSQL Database
-- **Constraint**: Primary database must be PostgreSQL 14+
+
+- **Constraint**: Primary database must be PostgreSQL 17+
 - **Rationale**: ACID compliance, JSON support, open source licensing
 - **Impact**: Database-specific optimizations and features
 
 **DC-003**: RESTful API Architecture
+
 - **Constraint**: API must follow REST architectural principles
 - **Rationale**: Industry standards and integration compatibility
 - **Impact**: API design patterns and HTTP method semantics
@@ -958,11 +973,13 @@ GET    /api/executions             # List executions
 ### 7.2 Business Constraints
 
 **DC-004**: Open Source Licensing
-- **Constraint**: All code and dependencies must be compatible with MIT license
+
+- **Constraint**: All code and dependencies must be compatible with LGPL v2.1 license
 - **Rationale**: Open source project objectives
-- **Impact**: Excludes proprietary libraries and GPL-licensed code
+- **Impact**: Excludes proprietary libraries
 
 **DC-005**: Zero Budget
+
 - **Constraint**: No budget available for commercial tools or services
 - **Rationale**: Personal project limitations
 - **Impact**: Must use open source and free tier services only
@@ -970,16 +987,19 @@ GET    /api/executions             # List executions
 ### 7.3 Architectural Constraints
 
 **DC-006**: Hexagonal Architecture Implementation
+
 - **Constraint**: System must implement Hexagonal Architecture (Ports and Adapters) pattern
 - **Rationale**: Separation of concerns, testability, and maintainability requirements
 - **Impact**: Defines clear boundaries between domain, application, and infrastructure layers
 
 **DC-007**: Domain-Driven Design Principles
+
 - **Constraint**: System must follow Domain-Driven Design principles and patterns
 - **Rationale**: Complex domain logic requires clear modeling and ubiquitous language
 - **Impact**: Influences entity design, aggregate boundaries, and service organization
 
 **DC-008**: Single-Node Processing
+
 - **Constraint**: Version 1.0 must operate on single node architecture
 - **Rationale**: Scope limitation for initial release
 - **Impact**: Limits horizontal scalability, requires efficient resource utilization
@@ -991,24 +1011,28 @@ GET    /api/executions             # List executions
 ### 8.1 Functional Testing Requirements
 
 #### 8.1.1 Unit Testing
+
 - **Requirement**: All business logic components must have unit tests
 - **Coverage**: Minimum 90% code coverage for domain and application layers
 - **Framework**: JUnit 5 with Mockito for mocking
 - **Criteria**: Tests must validate both successful and error conditions
 
 #### 8.1.2 Integration Testing
+
 - **Requirement**: All external interfaces must be integration tested
 - **Scope**: Database operations, REST API endpoints, schema validation
 - **Framework**: Spring Boot Test with TestContainers for database testing
 - **Criteria**: Tests must validate end-to-end functionality
 
 #### 8.1.3 API Testing
+
 - **Requirement**: All REST endpoints must be tested for compliance
 - **Validation**: Request/response formats, HTTP status codes, error handling
 - **Tools**: MockMvc for controller testing, OpenAPI validation
 - **Criteria**: Tests must cover all use cases and error scenarios
 
 #### 8.1.4 Performance Testing
+
 - **Requirement**: System must meet all performance benchmarks
 - **Tests**: Load testing, stress testing, throughput validation
 - **Tools**: JMeter or Gatling for load testing
@@ -1017,17 +1041,20 @@ GET    /api/executions             # List executions
 ### 8.2 Non-Functional Testing Requirements
 
 #### 8.2.1 Security Testing
+
 - **Requirement**: Security vulnerabilities must be identified and addressed
 - **Testing**: Input validation, authentication, authorization
 - **Tools**: OWASP dependency check, security scanning
 - **Criteria**: No critical or high-severity vulnerabilities
 
 #### 8.2.2 Reliability Testing
+
 - **Requirement**: System reliability must be validated under various conditions
 - **Testing**: Fault injection, error recovery, data consistency
 - **Criteria**: Must achieve 99.9% uptime and graceful error handling
 
 #### 8.2.3 Usability Testing
+
 - **Requirement**: API usability must be validated with target users
 - **Testing**: Developer experience, error message clarity, documentation
 - **Criteria**: Positive feedback from beta testers and contributors
@@ -1035,18 +1062,21 @@ GET    /api/executions             # List executions
 ### 8.3 Acceptance Criteria
 
 #### 8.3.1 Functional Acceptance
+
 - All functional requirements (FR-001 through FR-021) are implemented and tested
 - All use cases execute successfully under normal and error conditions
 - Data integrity is maintained throughout all operations
 - API conforms to OpenAPI specification
 
 #### 8.3.2 Non-Functional Acceptance
+
 - All performance requirements (NFR-001 through NFR-004) are met
 - System achieves 99.9% availability during testing period
 - Security requirements are validated with no critical vulnerabilities
 - Code quality standards are met (90%+ test coverage, A-grade quality)
 
 #### 8.3.3 Documentation Acceptance
+
 - Complete API documentation with examples
 - Comprehensive user guides and tutorials
 - Architecture documentation with diagrams
@@ -1055,18 +1085,21 @@ GET    /api/executions             # List executions
 ### 8.4 Test Deliverables
 
 #### 8.4.1 Test Plans
+
 - Unit Test Plan with coverage targets
 - Integration Test Plan with scenario definitions
 - Performance Test Plan with benchmark criteria
 - Security Test Plan with vulnerability assessment
 
 #### 8.4.2 Test Results
+
 - Test execution reports with pass/fail status
 - Performance benchmark results
 - Security scan reports
 - Code coverage analysis
 
 #### 8.4.3 Test Artifacts
+
 - Automated test suites
 - Test data sets and fixtures
 - Performance testing scripts
@@ -1112,9 +1145,11 @@ GET    /api/executions             # List executions
 ### Appendix C: Glossary Reference
 
 For detailed definitions of domain terms used in this document, refer to:
+
 - [Glossary of Terms](Glossary.md)
 
 Key terms frequently used in requirements:
+
 - **Pipeline**: Core processing workflow entity
 - **Processor**: Individual processing unit (Validator, Cleaner, Transformer)
 - **Schema**: Data structure definition and validation rules
@@ -1124,18 +1159,21 @@ Key terms frequently used in requirements:
 ### Appendix D: References and Standards
 
 #### D.1 Industry Standards
+
 - **IEEE 830-1998**: Guide for Software Requirements Specifications
 - **REST**: Representational State Transfer architectural style
 - **JSON Schema**: JSON Schema specification (draft-07+)
 - **OpenAPI 3.0**: API specification standard
 
 #### D.2 Technical References
+
 - **Spring Boot**: Framework documentation and best practices
 - **PostgreSQL**: Database features and optimization guides
 - **Docker**: Containerization standards and practices
 - **Maven**: Build system conventions and plugins
 
 #### D.3 Design Patterns
+
 - **Hexagonal Architecture**: Ports and Adapters pattern
 - **Domain-Driven Design**: DDD principles and patterns
 - **Chain of Responsibility**: Behavioral design pattern for processors
@@ -1147,28 +1185,20 @@ Key terms frequently used in requirements:
 
 ### Version History
 
-| Version | Date | Changes | Author |
-|---------|------|---------|---------|
-| 1.0 | September 2025 | Initial complete SRS document | [Your Name] |
-
-### Review and Approval
-
-| Role | Name | Date | Status |
-|------|------|------|--------|
-| **Technical Lead** | [Your Name] | [Date] | Draft |
-| **Architecture Review** | [Reviewer] | [Date] | Pending |
-| **Stakeholder Approval** | [Stakeholder] | [Date] | Pending |
+| Version | Date | Changes | Author         |
+|---------|------|---------|----------------|
+| 1.0 | September 2025 | Initial complete SRS document | Andres Jimenez |
 
 ### Document Maintenance
 
-- **Next Review Date**: [Date + 3 months]
+- **Next Review Date**: December 2025
 - **Review Frequency**: Quarterly or upon major requirement changes
 - **Change Control**: All changes require impact assessment and stakeholder approval
 - **Distribution**: Available via project repository and documentation site
 
 ---
 
-**Document Status**: Draft → Under Review → Approved  
+**Document Status**: Draft  
 **Last Updated**: September 2025  
-**Document Owner**: [Your Name]  
+**Document Owner**: Andres Jimenez  
 **Classification**: Open Source Project Documentation

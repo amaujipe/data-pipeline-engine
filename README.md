@@ -79,7 +79,7 @@ Our documentation is organized in the `/docs` folder, and follows enterprise sta
 |----------|--------|-------------|
 | [📋 Project Charter](docs/ProjectCharter.md) | ✅ Complete | Project vision, scope, objectives, and stakeholder analysis |
 | [📝 Glossary of Terms](docs/Glossary.md) | ✅ Complete | Ubiquitous language and domain terminology |
-| 👥 Use Cases Specification | 🔄 In Progress | Detailed functional requirements and user interactions |
+| [👥 Use Cases Specification](docs/UseCases.md#3-use-case-overview) | ✅ In Progress | Detailed functional requirements and user interactions |
 | 🏗️ Architecture Document | 📅 Planned | System architecture, patterns, and technical decisions |
 | 🗄️ Database Design | 📅 Planned | Entity-relationship diagrams and database schema |
 | 🔌 API Specification | 📅 Planned | REST API design and OpenAPI documentation |

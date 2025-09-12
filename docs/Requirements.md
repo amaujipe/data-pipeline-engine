@@ -65,7 +65,7 @@ For complete definitions, see: [Glossary of Terms](Glossary.md)
 |------------------------------------|---------|-------------|
 | Project Charter                    | 1.0 | Project vision, scope, and objectives |
 | Glossary of Terms                  | 1.0 | Ubiquitous language definitions |
-| Use Cases Specification (TODO)     | 1.0 | Detailed functional requirements scenarios |
+| [Use Cases Specification](UseCases.md#3-use-case-overview)     | 1.0 | Detailed functional requirements scenarios |
 | Entity Relationship Diagram (TODO) | 1.0 | Database design specifications |
 | Domain Model Diagram (TODO)        | 1.0 | Core business entities and relationships |
 | Sequence Diagrams (TODO)           | 1.0 | System interaction flows |
@@ -1147,6 +1147,10 @@ GET    /api/executions             # List executions
 For detailed definitions of domain terms used in this document, refer to:
 
 - [Glossary of Terms](Glossary.md)
+
+For detailed use cases, see:
+
+- [Use Cases Specification](UseCases.md#3-use-case-overview)
 
 Key terms frequently used in requirements:
 
